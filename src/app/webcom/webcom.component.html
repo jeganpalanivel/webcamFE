@@ -1,0 +1,40 @@
+<div class="container">
+    <h2>Dashboard</h2>
+  
+    <!-- Row 1 -->
+    <div class="row">
+      <div class="col-md-6">
+        <!-- Add widgets, charts, or other content here -->
+      </div>
+      <div class="col-md-6">
+        <!-- Add widgets, charts, or other content here -->
+      </div>
+    </div>
+  
+    <!-- Row 2 -->
+    <div class="row">
+      <div class="col-md-12">
+        <!-- Add widgets, charts, or other content here -->
+      </div>
+    </div>
+  </div>
+  
+
+
+<div>
+    <button type="button" class="btn btn-primary" (click)="checkPermission()">
+        Check the webcam Permission
+    </button>
+    <p>Status here:{{status}}</p>
+</div>
+<div *ngIf="stream">
+    <webcam [trigger]="$trigger" (imageCapture)="snapshot($event)"></webcam><br>
+    <button (click)="captureImage()">
+       {{btnLabel}}
+    </button>
+</div>
+
+<div *ngIf="previewImage">
+    <img [src]="previewImage" height="250" width="250"><br>
+    <button (click)="proceed()">Proceed</button>
+</div>

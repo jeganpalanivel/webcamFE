@@ -1,0 +1,20 @@
+<div class="registration-container">
+    <h2>Register</h2>
+    <form (ngSubmit)="onSubmit()">
+      <div class="form-group">
+        <label for="username">Username</label>
+        <input type="text" id="username" name="username" [(ngModel)]="formData.username" required>
+      </div>
+      
+      <div class="form-group">
+        <label for="password">Password</label>
+        <input type="password" id="password" name="password" [(ngModel)]="formData.password" required>
+      </div>
+      <button (click)="onSubmit()" type="submit">Register</button><br><br>
+
+      <span class="psw">Already an user, Back to <a href="/login">Login</a></span>
+
+    </form>
+  </div>
+  
+  
